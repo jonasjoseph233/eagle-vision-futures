@@ -1,5 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Brain, Wrench, LineChart, Users, MessageCircle, CalendarRange, CheckCircle2, Trophy, Target, Zap, Radar, BookOpen, HelpCircle } from "lucide-react";
+import { Brain, Wrench, LineChart, Users, MessageCircle, CalendarRange, CheckCircle2, Trophy, Target, Zap, Radar, BookOpen, HelpCircle, Crown, Phone, Bell, ClipboardCheck, Sparkles, Headphones } from "lucide-react";
+import { useState } from "react";
+import { z } from "zod";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import eagleLogo from "@/assets/eagle-logo.png";
 import eagleHero from "@/assets/eagle-hero.jpg";
@@ -451,6 +458,232 @@ function FAQ() {
   );
 }
 
+function Mentorship() {
+  const innerCircle = [
+    { icon: MessageCircle, title: "Elite Discord Access", desc: "Join our growing community of dedicated traders focused on consistent profitability." },
+    { icon: CalendarRange, title: "Weekly Market Intelligence", desc: "My personal volume profile analysis + high-probability setups delivered Sunday nights." },
+    { icon: LineChart, title: "Live Trading Sessions (3x/week)", desc: "Watch me trade live, see my decision-making process in real-time." },
+    { icon: ClipboardCheck, title: "Your Trades Reviewed & Optimized", desc: "Submit your trades for detailed feedback and execution improvements." },
+    { icon: Sparkles, title: "Advanced Psychology & Strategy Content", desc: "Monthly deep-dives into concepts not available anywhere else." },
+    { icon: Bell, title: "Real-Time Market Alerts", desc: "Get notified when major setups develop based on my analysis." },
+  ];
+  const whyChoose = [
+    { title: "Faster Learning Curve", desc: "Avoid the 2–3 years most traders waste figuring things out alone." },
+    { title: "Real-Time Feedback", desc: "Spot and fix mistakes before they become expensive habits." },
+    { title: "Battle-Tested Strategies", desc: "Learn methods refined through 500+ documented trades." },
+    { title: "Psychology Support", desc: "Master the mental game with traders who understand the struggle." },
+  ];
+  const vipExtras = [
+    { icon: Phone, title: "Private 1-on-1 Strategy Calls", desc: "Personalized coaching tailored to your specific challenges." },
+    { icon: ClipboardCheck, title: "Custom Trading Plan Creation", desc: "I'll build your personal roadmap based on your schedule and capital." },
+    { icon: Headphones, title: "Direct Access Channel", desc: "Text me directly for urgent trading questions." },
+    { icon: Target, title: "Personalized Trade Setups", desc: "I'll identify specific opportunities based on your risk tolerance." },
+    { icon: Users, title: "Accountability Partnership", desc: "Weekly check-ins to ensure you're executing your plan." },
+  ];
+
+  const applicationSchema = z.object({
+    name: z.string().trim().min(2, "Name is required").max(100),
+    email: z.string().trim().email("Valid email required").max(255),
+    experience: z.string().trim().min(1, "Please select").max(50),
+    capital: z.string().trim().min(1, "Please select").max(50),
+    goals: z.string().trim().min(10, "Tell us a bit more").max(1000),
+  });
+
+  const [form, setForm] = useState({ name: "", email: "", experience: "", capital: "", goals: "" });
+  const [submitting, setSubmitting] = useState(false);
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const result = applicationSchema.safeParse(form);
+    if (!result.success) {
+      toast.error(result.error.issues[0]?.message ?? "Please complete the form");
+      return;
+    }
+    setSubmitting(true);
+    setTimeout(() => {
+      setSubmitting(false);
+      setForm({ name: "", email: "", experience: "", capital: "", goals: "" });
+      toast.success("Application received — we'll review within 24 hours.");
+    }, 600);
+  };
+
+  return (
+    <section id="mentorship" className="relative py-24 px-6 border-t border-border/60">
+      <div className="mx-auto max-w-6xl">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-primary">
+            <Crown className="h-3.5 w-3.5" /> Inner Circle
+          </span>
+          <h2 className="mt-6 font-display text-4xl md:text-5xl leading-tight">
+            Join the <span className="italic text-primary">Inner Circle</span> — Elite Trader Mentorship
+          </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Two paths to accelerate your growth alongside traders who hold themselves to a higher standard.
+          </p>
+        </div>
+
+        {/* Inner Circle */}
+        <div className="rounded-3xl border border-border/70 bg-card/60 backdrop-blur p-8 md:p-12" style={{ boxShadow: 'var(--shadow-card)' }}>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+            <div>
+              <p className="text-xs uppercase tracking-[0.25em] text-primary mb-2">Inner Circle Community</p>
+              <h3 className="font-display text-3xl md:text-4xl">Your Trading Transformation Headquarters</h3>
+            </div>
+            <div className="text-right">
+              <div className="font-display text-4xl text-primary">$99<span className="text-lg text-muted-foreground">/month</span></div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            {innerCircle.map((item) => (
+              <div key={item.title} className="flex gap-4 rounded-2xl border border-border/60 bg-background/40 p-5">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary">
+                  <item.icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <h4 className="font-medium mb-1">{item.title}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-2xl border border-primary/40 bg-primary/5 p-6">
+            <div>
+              <div className="font-display text-2xl">Inner Circle — <span className="text-primary">$99.99/month</span></div>
+              <p className="text-sm text-muted-foreground mt-1">Cancel anytime. Built for serious traders.</p>
+            </div>
+            <a href="#mentorship-apply" className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition" style={{ boxShadow: 'var(--shadow-soar)' }}>
+              Join the Inner Circle
+            </a>
+          </div>
+        </div>
+
+        {/* Why smart traders */}
+        <div className="mt-16">
+          <h3 className="font-display text-2xl md:text-3xl text-center mb-8">Why Smart Traders Choose Mentorship</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {whyChoose.map((w) => (
+              <div key={w.title} className="rounded-2xl border border-border/60 bg-card/40 p-5">
+                <div className="flex items-center gap-2 mb-2">
+                  <CheckCircle2 className="h-5 w-5 text-primary" />
+                  <h4 className="font-medium">{w.title}</h4>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* VIP */}
+        <div className="mt-16 rounded-3xl border border-primary/50 p-8 md:p-12 relative overflow-hidden" style={{ background: 'var(--gradient-gold)', boxShadow: 'var(--shadow-soar)' }}>
+          <div className="absolute inset-0 bg-background/85" />
+          <div className="relative">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+              <div>
+                <span className="inline-flex items-center gap-2 rounded-full bg-primary/20 px-3 py-1 text-xs uppercase tracking-[0.25em] text-primary mb-3">
+                  <Crown className="h-3.5 w-3.5" /> VIP Mentorship
+                </span>
+                <h3 className="font-display text-3xl md:text-4xl">Direct Access to My Trading Brain</h3>
+                <p className="text-sm text-muted-foreground mt-2">Everything in Inner Circle — plus:</p>
+              </div>
+              <div className="text-right">
+                <div className="font-display text-4xl text-primary">$450<span className="text-lg text-muted-foreground">/month</span></div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-5">
+              {vipExtras.map((item) => (
+                <div key={item.title} className="flex gap-4 rounded-2xl border border-border/60 bg-card/70 p-5">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary">
+                    <item.icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-1">{item.title}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 grid md:grid-cols-3 gap-4 items-center rounded-2xl border border-primary/40 bg-card/80 p-6">
+              <div className="md:col-span-2">
+                <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-primary mb-2">
+                  <Sparkles className="h-3.5 w-3.5" /> Limited Spots Available
+                </div>
+                <p className="text-sm text-muted-foreground">We maintain a 4:1 student-to-mentor ratio for quality. All applications reviewed within 24 hours.</p>
+              </div>
+              <a href="#mentorship-apply" className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition text-center" style={{ boxShadow: 'var(--shadow-soar)' }}>
+                Book a Call — $450/mo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Application form */}
+        <div id="mentorship-apply" className="mt-16 rounded-3xl border border-border/70 bg-card/60 backdrop-blur p-8 md:p-12">
+          <div className="grid md:grid-cols-5 gap-8">
+            <div className="md:col-span-2">
+              <p className="text-xs uppercase tracking-[0.25em] text-primary mb-2">Apply Now</p>
+              <h3 className="font-display text-2xl md:text-3xl mb-3">Book a Call for VIP Mentorship</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Tell us about your trading journey. If we're a fit, you'll receive a calendar link within 24 hours to lock in your strategy call.
+              </p>
+              <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+                <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5" /> 4:1 student-to-mentor ratio</li>
+                <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5" /> Reviewed personally within 24h</li>
+                <li className="flex gap-2"><CheckCircle2 className="h-4 w-4 text-primary mt-0.5" /> Limited monthly spots</li>
+              </ul>
+            </div>
+            <form onSubmit={onSubmit} className="md:col-span-3 space-y-4">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="m-name">Full Name</Label>
+                  <Input id="m-name" maxLength={100} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="mt-1.5" />
+                </div>
+                <div>
+                  <Label htmlFor="m-email">Email</Label>
+                  <Input id="m-email" type="email" maxLength={255} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="mt-1.5" />
+                </div>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="m-exp">Trading Experience</Label>
+                  <select id="m-exp" value={form.experience} onChange={(e) => setForm({ ...form, experience: e.target.value })} className="mt-1.5 flex h-9 w-full rounded-md border border-input bg-background px-3 text-sm">
+                    <option value="">Select…</option>
+                    <option value="<1y">Less than 1 year</option>
+                    <option value="1-3y">1–3 years</option>
+                    <option value="3-5y">3–5 years</option>
+                    <option value="5y+">5+ years</option>
+                  </select>
+                </div>
+                <div>
+                  <Label htmlFor="m-cap">Trading Capital</Label>
+                  <select id="m-cap" value={form.capital} onChange={(e) => setForm({ ...form, capital: e.target.value })} className="mt-1.5 flex h-9 w-full rounded-md border border-input bg-background px-3 text-sm">
+                    <option value="">Select…</option>
+                    <option value="<10k">Under $10k</option>
+                    <option value="10-25k">$10k–$25k</option>
+                    <option value="25-100k">$25k–$100k</option>
+                    <option value="100k+">$100k+</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <Label htmlFor="m-goals">Your Goals & Biggest Challenge</Label>
+                <Textarea id="m-goals" maxLength={1000} rows={4} value={form.goals} onChange={(e) => setForm({ ...form, goals: e.target.value })} className="mt-1.5" />
+              </div>
+              <Button type="submit" disabled={submitting} size="lg" className="w-full">
+                {submitting ? "Submitting…" : "Apply for VIP Mentorship"}
+              </Button>
+              <p className="text-xs text-muted-foreground text-center">All applications reviewed within 24 hours.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Closing() {
   return (
     <section className="relative py-32 px-6">
@@ -495,6 +728,7 @@ function Home() {
       <Strategies />
       <Offer />
       <FAQ />
+      <Mentorship />
       <Closing />
       <Footer />
     </main>
