@@ -134,20 +134,37 @@ function Course() {
   return (
     <section id="course" className="relative py-32 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="rounded-3xl border border-border overflow-hidden" style={{ boxShadow: 'var(--shadow-card)' }}>
-          <div className="grid lg:grid-cols-2">
-            <div className="relative min-h-[420px] bg-card">
-              <img src={volumeProfile} alt="Volume profile chart" className="absolute inset-0 h-full w-full object-cover opacity-80" loading="lazy" width={1280} height={800} />
-              <div className="absolute inset-0 bg-gradient-to-tr from-background via-background/40 to-transparent" />
-              <div className="relative p-10 flex flex-col justify-end h-full min-h-[420px]">
-                <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">The Course</p>
-                <p className="font-display text-3xl">Futures Trading & Volume Profile Mastery 101</p>
+        <div className="text-center mb-14">
+          <p className="text-sm uppercase tracking-[0.25em] text-primary mb-4">Pricing</p>
+          <h2 className="font-display text-4xl md:text-5xl leading-tight mb-4">
+            Two paths. <span className="italic text-muted-foreground">One edge.</span>
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Most futures courses run <span className="line-through">$1,000+</span>. We're keeping the door
+            open at a limited launch price — built for the few who actually do the work.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-6">
+          {/* MAIN COURSE */}
+          <div className="rounded-3xl border border-primary/40 overflow-hidden bg-card relative" style={{ boxShadow: 'var(--shadow-card)' }}>
+            <div className="absolute top-5 right-5 z-10">
+              <span className="rounded-full bg-primary/15 border border-primary/40 text-primary text-[10px] uppercase tracking-[0.2em] px-3 py-1">Limited launch price</span>
+            </div>
+            <div className="relative h-44">
+              <img src={volumeProfile} alt="Volume profile chart" className="absolute inset-0 h-full w-full object-cover opacity-70" loading="lazy" width={1280} height={800} />
+              <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+              <div className="relative p-8 flex flex-col justify-end h-full">
+                <p className="text-xs uppercase tracking-[0.3em] text-primary mb-2">The Flagship Course</p>
+                <p className="font-display text-2xl md:text-3xl">Futures Trading & Volume Profile Mastery 101</p>
               </div>
             </div>
-            <div className="bg-card p-10 lg:p-14">
-              <div className="flex items-baseline gap-3 mb-2">
-                <span className="font-display text-5xl text-primary">$497</span>
-                <span className="text-sm text-muted-foreground line-through">$697</span>
+
+            <div className="p-8 lg:p-10">
+              <div className="flex items-baseline gap-3 mb-1">
+                <span className="font-display text-5xl text-primary">$299.99</span>
+                <span className="text-base text-muted-foreground line-through">$1,000+</span>
+                <span className="rounded-full bg-primary/20 text-primary text-[11px] font-medium px-2 py-0.5">Save 70%</span>
               </div>
               <p className="text-sm text-muted-foreground mb-8">One-time payment · Lifetime access · Free updates</p>
 
@@ -161,9 +178,39 @@ function Course() {
               </ul>
 
               <a href="#" className="block w-full text-center rounded-full bg-primary px-7 py-4 text-sm font-medium text-primary-foreground hover:opacity-90 transition" style={{ boxShadow: 'var(--shadow-soar)' }}>
-                Enroll in the Course
+                Enroll — $299.99
               </a>
               <p className="text-xs text-muted-foreground text-center mt-4">Trading futures involves risk. Past performance is not indicative of future results.</p>
+            </div>
+          </div>
+
+          {/* STRATEGIES PACKAGE */}
+          <div className="rounded-3xl border border-border overflow-hidden bg-card/60 backdrop-blur-sm flex flex-col" style={{ boxShadow: 'var(--shadow-card)' }}>
+            <div className="p-8 lg:p-10 flex-1 flex flex-col">
+              <p className="text-xs uppercase tracking-[0.3em] text-primary mb-2">Add-on · Strategy Pack</p>
+              <p className="font-display text-2xl md:text-3xl mb-6">Profitable Strategies Package</p>
+
+              <div className="flex items-baseline gap-3 mb-1">
+                <span className="font-display text-5xl text-foreground">$199.99</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-8">
+                Skip the guesswork. Buy the exact strategies I trade — volume + market structure fused.
+                A shortcut to reading the chart the way we do.
+              </p>
+
+              <ul className="space-y-3 mb-10 flex-1">
+                {strategyModules.map((m, i) => (
+                  <li key={i} className="flex gap-3 text-sm text-foreground/90">
+                    <span className="font-display text-primary text-xs mt-1 w-6 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+                    <span>{m}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a href="#" className="block w-full text-center rounded-full border border-primary/60 text-primary px-7 py-4 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition">
+                Get the Strategies — $199.99
+              </a>
+              <p className="text-xs text-muted-foreground text-center mt-4">Best paired with the flagship course for full context.</p>
             </div>
           </div>
         </div>
