@@ -403,6 +403,7 @@ function Home() {
       <Benefits />
       <Principles />
       <Curriculum />
+      <Strategies />
       <Offer />
       <Closing />
       <Footer />
