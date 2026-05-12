@@ -727,9 +727,9 @@ function Home() {
       <Curriculum />
       <Strategies />
       <Offer />
-      <FAQ />
       <Mentorship />
       <Closing />
+      <FAQ />
       <Footer />
     </main>
   );
