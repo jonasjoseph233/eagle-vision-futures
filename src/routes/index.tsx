@@ -231,6 +231,7 @@ const valueItems = [
   { t: "Live Weekly Training", d: "Real-time market analysis and Q&A with the coach.", v: "$179" },
   { t: "Market Intelligence Reports", d: "Weekly breakdowns to time the markets with confidence.", v: "$129" },
   { t: "Trading Psychology Framework", d: "Master the mental game and build unshakable execution.", v: "$129" },
+];
 
 const strategyBenefits = [
   { Icon: Trophy, t: "500+ Live Trades Proven — 80% Win Rate", d: "Every strategy has been tested in real market conditions with documented results." },
