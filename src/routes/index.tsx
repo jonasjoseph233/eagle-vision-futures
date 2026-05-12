@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Brain, Wrench, LineChart, Users, MessageCircle, CalendarRange, CheckCircle2, Trophy, Target, Zap, Radar, BookOpen } from "lucide-react";
+import { Brain, Wrench, LineChart, Users, MessageCircle, CalendarRange, CheckCircle2, Trophy, Target, Zap, Radar, BookOpen, HelpCircle } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import eagleLogo from "@/assets/eagle-logo.png";
 import eagleHero from "@/assets/eagle-hero.jpg";
 import volumeProfile from "@/assets/volume-profile.jpg";
