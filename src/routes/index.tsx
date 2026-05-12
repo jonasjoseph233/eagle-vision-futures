@@ -728,6 +728,7 @@ function Home() {
       <Strategies />
       <Offer />
       <FAQ />
+      <Mentorship />
       <Closing />
       <Footer />
     </main>
