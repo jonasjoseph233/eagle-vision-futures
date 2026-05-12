@@ -231,7 +231,74 @@ const valueItems = [
   { t: "Live Weekly Training", d: "Real-time market analysis and Q&A with the coach.", v: "$179" },
   { t: "Market Intelligence Reports", d: "Weekly breakdowns to time the markets with confidence.", v: "$129" },
   { t: "Trading Psychology Framework", d: "Master the mental game and build unshakable execution.", v: "$129" },
+
+const strategyBenefits = [
+  { Icon: Trophy, t: "500+ Live Trades Proven — 80% Win Rate", d: "Every strategy has been tested in real market conditions with documented results." },
+  { Icon: Target, t: "Master Precise Entry & Exit Timing", d: "Learn the exact signals I use to maximize profits and minimize losses." },
+  { Icon: Zap, t: "Spot High-Probability Setups in Seconds", d: "Instantly identify trades with 3:1 reward potential while avoiding market traps." },
+  { Icon: Users, t: "Join Our Private Discord of Elite Traders", d: "Network with traders averaging high monthly returns." },
+  { Icon: MessageCircle, t: "Get Personal Strategy Coaching", d: "Weekly live sessions where I break down real setups and answer your questions." },
+  { Icon: Radar, t: "Never Miss Another Big Move", d: "My personal market analysis delivered weekly with actionable trade ideas." },
 ];
+
+const strategyArsenal = [
+  "EagleView Breakout & Continuation Models",
+  "Volume Profile Mastery System",
+  "Session Timing & Risk Management Rules",
+  "Live Trade Examples & Psychology Framework",
+];
+
+function Strategies() {
+  return (
+    <section id="strategies" className="relative py-32 px-6">
+      <div className="mx-auto max-w-6xl">
+        <div className="text-center mb-16">
+          <p className="text-sm uppercase tracking-[0.25em] text-primary mb-4">Strategy Arsenal</p>
+          <h2 className="font-display text-4xl md:text-5xl leading-tight">
+            Battle-Tested Trading Strategies<br />
+            <span className="italic text-muted-foreground">that actually work.</span>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {strategyBenefits.map(({ Icon, t, d }) => (
+            <div key={t} className="rounded-2xl border border-border bg-card/40 backdrop-blur-sm p-7 hover:border-primary/40 transition">
+              <div className="h-11 w-11 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center mb-5">
+                <Icon className="h-5 w-5 text-primary" />
+              </div>
+              <h3 className="font-display text-xl mb-2 leading-snug">{t}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-3xl border border-primary/30 bg-gradient-to-br from-primary/10 to-transparent p-8 md:p-10">
+          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">Inside the arsenal</p>
+          <h3 className="font-display text-2xl md:text-3xl mb-6">What's inside the complete Strategy Arsenal</h3>
+          <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            {strategyArsenal.map((s) => (
+              <div key={s} className="flex items-start gap-3 text-sm text-foreground/90">
+                <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                <span>{s}</span>
+              </div>
+            ))}
+          </div>
+          <div className="border-t border-border/60 pt-6">
+            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">Bonus</p>
+            <div className="flex flex-wrap gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm">
+                <CheckCircle2 className="h-4 w-4 text-primary" /> Free Checklist
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm">
+                <BookOpen className="h-4 w-4 text-primary" /> Free EagleView E-Book
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function Offer() {
   return (
