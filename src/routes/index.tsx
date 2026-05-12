@@ -296,6 +296,38 @@ function Strategies() {
             </div>
           </div>
         </div>
+
+        {/* Strategy purchase card */}
+        <div id="strategies-offer" className="mt-10 rounded-3xl border border-primary/40 bg-card overflow-hidden grid md:grid-cols-5" style={{ boxShadow: 'var(--shadow-card)' }}>
+          <div className="md:col-span-3 p-8 md:p-10">
+            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">Strategies — standalone offer</p>
+            <h3 className="font-display text-3xl md:text-4xl mb-4 leading-tight">
+              Get the <span className="italic text-primary">EagleView Strategy Arsenal</span> on its own.
+            </h3>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Already trading and just want the playbook? Buy the exact strategies I trade —
+              volume + market structure fused, with annotated entries, stops and targets.
+              Includes the Free Checklist & Free EagleView E-Book.
+            </p>
+            <ul className="space-y-2 mb-8">
+              {strategyArsenal.map((s) => (
+                <li key={s} className="flex items-start gap-3 text-sm text-foreground/90">
+                  <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                  <span>{s}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="md:col-span-2 p-8 md:p-10 bg-gradient-to-br from-primary/15 to-transparent border-t md:border-t-0 md:border-l border-border flex flex-col justify-center">
+            <p className="text-xs uppercase tracking-[0.3em] text-primary mb-2">Your investment</p>
+            <div className="font-display text-5xl text-foreground mb-1">$199.99</div>
+            <p className="text-sm text-muted-foreground mb-6">One-time payment · Lifetime access</p>
+            <a href="#" className="block w-full text-center rounded-full bg-primary px-7 py-4 text-sm font-medium text-primary-foreground hover:opacity-90 transition" style={{ boxShadow: 'var(--shadow-soar)' }}>
+              Get the Strategies — $199.99
+            </a>
+            <p className="text-xs text-muted-foreground text-center mt-4">Best paired with the flagship course for full context.</p>
+          </div>
+        </div>
       </div>
     </section>
   );
