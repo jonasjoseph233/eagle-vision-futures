@@ -494,6 +494,7 @@ function Home() {
       <Curriculum />
       <Strategies />
       <Offer />
+      <FAQ />
       <Closing />
       <Footer />
     </main>
