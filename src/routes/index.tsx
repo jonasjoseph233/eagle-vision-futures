@@ -117,7 +117,17 @@ const modules = [
   "Composite profiles & multi-day context",
   "Trade location, entries, stops & sizing",
   "Risk, journaling & the trader's mindset",
-  "Live walkthroughs across ES, NQ, CL & GC",
+  "Live walkthroughs of the indices — NQ & ES",
+  "Weekly trade breakdowns & recaps",
+  "Private Discord access — high-standards community",
+];
+
+const strategyModules = [
+  "My personal high-conviction setups",
+  "Volume + market structure confluence playbook",
+  "Entry, stop & target rules with annotated examples",
+  "Bias frameworks for NQ & ES",
+  "Plug-and-play — designed to accelerate your learning",
 ];
 
 function Course() {
