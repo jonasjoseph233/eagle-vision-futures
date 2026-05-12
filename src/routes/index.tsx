@@ -85,13 +85,24 @@ function Principles() {
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-primary mb-4">The philosophy</p>
             <h2 className="font-display text-4xl md:text-5xl leading-tight">
-              Most traders stare at price.<br />
-              <span className="italic text-muted-foreground">We watch the herd.</span>
+              Most traders force the market.<br />
+              <span className="italic text-muted-foreground">We follow the system.</span>
             </h2>
+            <p className="mt-6 text-muted-foreground leading-relaxed">
+              Most traders force actions onto the markets and try to predict them. We follow guidelines and
+              stay disciplined to our winning system.
+            </p>
+            <p className="mt-4 text-foreground/90 leading-relaxed font-display italic">
+              If <span className="text-primary not-italic font-sans">y = Entry</span>, then we execute —
+              regardless of fear or any other emotion.
+            </p>
           </div>
           <p className="text-muted-foreground leading-relaxed">
-            Eagle View was built for the trader tired of indicators, signal groups, and noise. This is one
-            method, taught with depth — the same lens used by institutional desks to navigate futures markets.
+            Eagle View was built for the trader tired of inconsistent results, confusing concepts and
+            limiting circumstances. We are proud to represent high-standard processes for people who believe
+            in themselves — so they can achieve greater heights in life. This is one method, taught with
+            depth — the same lens used by <span className="text-foreground">multi-millionaire institutional
+            desks</span> to navigate futures markets.
           </p>
         </div>
 
