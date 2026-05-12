@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Brain, Wrench, LineChart, Users, MessageCircle, CalendarRange, CheckCircle2, Trophy, Target, Zap, Radar, BookOpen } from "lucide-react";
+import { Brain, Wrench, LineChart, Users, MessageCircle, CalendarRange, CheckCircle2, Trophy, Target, Zap, Radar, BookOpen, HelpCircle } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import eagleLogo from "@/assets/eagle-logo.png";
 import eagleHero from "@/assets/eagle-hero.jpg";
 import volumeProfile from "@/assets/volume-profile.jpg";
@@ -394,6 +395,62 @@ function Offer() {
   );
 }
 
+const faqs = [
+  {
+    q: "What are the program requirements/prerequisites?",
+    a: "You must understand the mental and psychological aspect of trading before using live funds. This ensures you remain process-focused instead of focused on money.",
+  },
+  {
+    q: "What if I'm a complete beginner?",
+    a: "You must have a basic understanding of what forex/futures are, along with the scale metrics used in the markets.",
+  },
+  {
+    q: "How long does it take to see results?",
+    a: "After understanding and becoming disciplined to the trading system, you can see results in as little as 1 month.",
+  },
+  {
+    q: "What kind of support is provided?",
+    a: "Our customer service email is EagleviewTrading@Gmail.com. We respond within 24 hours.",
+  },
+  {
+    q: "Can I access the material on mobile?",
+    a: "You can — however it is advised not to place trades using mobile cellular devices.",
+  },
+];
+
+function FAQ() {
+  return (
+    <section id="faq" className="relative py-32 px-6">
+      <div className="mx-auto max-w-3xl">
+        <div className="text-center mb-14">
+          <p className="text-sm uppercase tracking-[0.25em] text-primary mb-4 inline-flex items-center gap-2 justify-center">
+            <HelpCircle className="h-4 w-4" /> FAQ
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl leading-tight">
+            Frequently Asked <span className="italic text-muted-foreground">Questions.</span>
+          </h2>
+        </div>
+        <Accordion type="single" collapsible className="space-y-3">
+          {faqs.map((f, i) => (
+            <AccordionItem
+              key={f.q}
+              value={`item-${i}`}
+              className="rounded-2xl border border-border bg-card/40 backdrop-blur-sm px-6 hover:border-primary/40 transition"
+            >
+              <AccordionTrigger className="font-display text-lg text-left hover:no-underline py-5">
+                {f.q}
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground text-sm leading-relaxed pb-5">
+                {f.a}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
+    </section>
+  );
+}
+
 function Closing() {
   return (
     <section className="relative py-32 px-6">
@@ -437,6 +494,7 @@ function Home() {
       <Curriculum />
       <Strategies />
       <Offer />
+      <FAQ />
       <Closing />
       <Footer />
     </main>
