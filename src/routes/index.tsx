@@ -179,7 +179,7 @@ const phases = [
   },
 ];
 
-const bonuses = ["Private community access", "Lifetime updates", "PDF resources", "Future strategy releases"];
+const bonuses = ["Free Checklist", "Free EagleView E-Book", "Private community access", "Lifetime updates", "PDF resources", "Future strategy releases"];
 
 function Curriculum() {
   return (
