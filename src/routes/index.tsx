@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Brain, Wrench, LineChart, Users, MessageCircle, CalendarRange, CheckCircle2 } from "lucide-react";
 import eagleLogo from "@/assets/eagle-logo.png";
 import eagleHero from "@/assets/eagle-hero.jpg";
 import volumeProfile from "@/assets/volume-profile.jpg";
@@ -7,10 +8,10 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { title: "Eagle View Futures — Volume Profile Mastery Course" },
-      { name: "description", content: "Soar above the markets. A comprehensive futures trading course built around Volume Profile Mastery 101. See what other traders miss." },
-      { property: "og:title", content: "Eagle View Futures — Volume Profile Mastery" },
-      { property: "og:description", content: "A comprehensive futures trading course centered on Volume Profile Mastery 101." },
+      { title: "Eagle View Futures — Master Futures Trading with Psychology-Driven Strategies" },
+      { name: "description", content: "Master futures trading with psychology-driven strategies. Volume Profile, market structure, live coaching, private Discord — the complete EagleView system." },
+      { property: "og:title", content: "Eagle View Futures — Complete Trading Mastery System" },
+      { property: "og:description", content: "Psychology-driven futures trading. Volume Profile mastery, live walkthroughs of NQ & ES, private Discord." },
     ],
   }),
 });
@@ -24,11 +25,12 @@ function Nav() {
           <span className="font-display text-lg tracking-tight">Eagle View <span className="text-primary">Futures</span></span>
         </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-          <a href="#course" className="hover:text-foreground transition">Course</a>
+          <a href="#benefits" className="hover:text-foreground transition">Benefits</a>
           <a href="#curriculum" className="hover:text-foreground transition">Curriculum</a>
+          <a href="#offer" className="hover:text-foreground transition">Offer</a>
           <a href="#about" className="hover:text-foreground transition">Philosophy</a>
         </div>
-        <a href="#course" className="rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition">
+        <a href="#offer" className="rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90 transition">
           Enroll
         </a>
       </nav>
@@ -46,25 +48,59 @@ function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-6 pt-32 pb-24 w-full">
-        <div className="max-w-2xl animate-fade-up">
+        <div className="max-w-3xl animate-fade-up">
           <p className="text-sm uppercase tracking-[0.25em] text-primary mb-6">Eagle View · Futures Trading</p>
           <h1 className="font-display text-5xl md:text-7xl leading-[1.05] text-foreground">
-            See the market<br />
-            <span className="italic text-primary">from above.</span>
+            Master Futures Trading with<br />
+            <span className="italic text-primary">Psychology-Driven Strategies.</span>
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed">
-            A patient, comprehensive futures trading course built on a single edge:
-            <span className="text-foreground"> Volume Profile mastery.</span> Read the auction.
-            Find the levels that actually matter. Trade with conviction.
+          <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">
+            Join a growing community of traders transforming their results with proven mental
+            frameworks and technical mastery — built around Volume Profile and market structure.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <a href="#course" className="rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition shadow-soar" style={{ boxShadow: 'var(--shadow-soar)' }}>
-              Begin the Ascent
+            <a href="#offer" className="rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition" style={{ boxShadow: 'var(--shadow-soar)' }}>
+              Take Flight — Enroll Now
             </a>
             <a href="#curriculum" className="rounded-full border border-border px-7 py-3.5 text-sm font-medium text-foreground hover:bg-secondary transition">
               View Curriculum
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const benefits = [
+  { Icon: Brain, t: "Master the Psychology of Profitable Trading", d: "Eliminate emotional trading and develop the mindset of consistent winners." },
+  { Icon: Wrench, t: "Get My Personal Trading Setup & Broker", d: "Skip years of testing — use the exact platforms and broker I rely on daily." },
+  { Icon: LineChart, t: "Learn Advanced Technical Analysis", d: "Read market psychology through price action and volume patterns that actually work." },
+  { Icon: Users, t: "Join Our Elite Trader Community", d: "Connect with profitable traders in our private Discord — networking worth thousands." },
+  { Icon: MessageCircle, t: "Personal Coaching in Live Q&As", d: "Direct access to me for your specific trading challenges and setups." },
+  { Icon: CalendarRange, t: "Weekly Market Opportunities Delivered", d: "Never miss high-probability setups with my personal market analysis." },
+];
+
+function Benefits() {
+  return (
+    <section id="benefits" className="relative py-32 px-6">
+      <div className="mx-auto max-w-6xl">
+        <div className="text-center mb-16">
+          <p className="text-sm uppercase tracking-[0.25em] text-primary mb-4">What you get</p>
+          <h2 className="font-display text-4xl md:text-5xl leading-tight">
+            Everything you need to <span className="italic text-muted-foreground">trade like a professional.</span>
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {benefits.map(({ Icon, t, d }) => (
+            <div key={t} className="rounded-2xl border border-border bg-card/40 backdrop-blur-sm p-7 hover:border-primary/40 transition">
+              <div className="h-11 w-11 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center mb-5">
+                <Icon className="h-5 w-5 text-primary" />
+              </div>
+              <h3 className="font-display text-xl mb-2 leading-snug">{t}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{d}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -120,110 +156,138 @@ function Principles() {
   );
 }
 
-const modules = [
-  "Market structure & the auction process",
-  "Building & reading Volume Profile",
-  "Value Area, POC and developing value",
-  "Initial Balance, opening types & day frameworks",
-  "Composite profiles & multi-day context",
-  "Trade location, entries, stops & sizing",
-  "Risk, journaling & the trader's mindset",
-  "Live walkthroughs of the indices — NQ & ES",
-  "Weekly trade breakdowns & recaps",
-  "Private Discord access — high-standards community",
+const phases = [
+  {
+    label: "Phase 1",
+    title: "Foundation & Mindset",
+    items: ["Trading psychology mastery", "Platform setup & broker selection", "Risk management that protects your capital"],
+  },
+  {
+    label: "Phase 2",
+    title: "Reading the Market",
+    items: ["Volume Profile secrets", "Price action psychology", "Market structure analysis"],
+  },
+  {
+    label: "Phase 3",
+    title: "The EagleView Strategy",
+    items: ["My proprietary trading method", "Entry and exit precision", "Risk/reward optimization"],
+  },
+  {
+    label: "Phase 4",
+    title: "Execution Mastery",
+    items: ["Live trading examples (NQ & ES)", "Emotional control under pressure", "Profitable trade management"],
+  },
 ];
 
-const strategyModules = [
-  "My personal high-conviction setups",
-  "Volume + market structure confluence playbook",
-  "Entry, stop & target rules with annotated examples",
-  "Bias frameworks for NQ & ES",
-  "Plug-and-play — designed to accelerate your learning",
-];
+const bonuses = ["Private community access", "Lifetime updates", "PDF resources", "Future strategy releases"];
 
-function Course() {
+function Curriculum() {
   return (
-    <section id="course" className="relative py-32 px-6">
+    <section id="curriculum" className="relative py-32 px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center mb-14">
-          <p className="text-sm uppercase tracking-[0.25em] text-primary mb-4">Pricing</p>
-          <h2 className="font-display text-4xl md:text-5xl leading-tight mb-4">
-            Two paths. <span className="italic text-muted-foreground">One edge.</span>
+        <div className="text-center mb-16">
+          <p className="text-sm uppercase tracking-[0.25em] text-primary mb-4">Detailed curriculum</p>
+          <h2 className="font-display text-4xl md:text-5xl leading-tight">
+            Here's everything inside <span className="italic text-muted-foreground">the complete system.</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Most futures courses run <span className="line-through">$1,000+</span>. We're keeping the door
-            open at a limited launch price — built for the few who actually do the work.
-          </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6">
-          {/* MAIN COURSE */}
-          <div className="rounded-3xl border border-primary/40 overflow-hidden bg-card relative" style={{ boxShadow: 'var(--shadow-card)' }}>
-            <div className="absolute top-5 right-5 z-10">
-              <span className="rounded-full bg-primary/15 border border-primary/40 text-primary text-[10px] uppercase tracking-[0.2em] px-3 py-1">Limited launch price</span>
-            </div>
-            <div className="relative h-44">
-              <img src={volumeProfile} alt="Volume profile chart" className="absolute inset-0 h-full w-full object-cover opacity-70" loading="lazy" width={1280} height={800} />
-              <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
-              <div className="relative p-8 flex flex-col justify-end h-full">
-                <p className="text-xs uppercase tracking-[0.3em] text-primary mb-2">The Flagship Course</p>
-                <p className="font-display text-2xl md:text-3xl">Futures Trading & Volume Profile Mastery 101</p>
-              </div>
-            </div>
-
-            <div className="p-8 lg:p-10">
-              <div className="flex items-baseline gap-3 mb-1">
-                <span className="font-display text-5xl text-primary">$299.99</span>
-                <span className="text-base text-muted-foreground line-through">$1,000+</span>
-                <span className="rounded-full bg-primary/20 text-primary text-[11px] font-medium px-2 py-0.5">Save 70%</span>
-              </div>
-              <p className="text-sm text-muted-foreground mb-8">One-time payment · Lifetime access · Free updates</p>
-
-              <ul id="curriculum" className="space-y-3 mb-10">
-                {modules.map((m, i) => (
-                  <li key={i} className="flex gap-3 text-sm text-foreground/90">
-                    <span className="font-display text-primary text-xs mt-1 w-6 shrink-0">{String(i + 1).padStart(2, '0')}</span>
-                    <span>{m}</span>
+        <div className="grid md:grid-cols-2 gap-6">
+          {phases.map((p) => (
+            <div key={p.label} className="rounded-2xl border border-border bg-card/40 backdrop-blur-sm p-8 hover:border-primary/40 transition">
+              <p className="text-xs uppercase tracking-[0.3em] text-primary mb-2">{p.label}</p>
+              <h3 className="font-display text-2xl mb-5">{p.title}</h3>
+              <ul className="space-y-3">
+                {p.items.map((it) => (
+                  <li key={it} className="flex gap-3 text-sm text-foreground/90">
+                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                    <span>{it}</span>
                   </li>
                 ))}
               </ul>
-
-              <a href="#" className="block w-full text-center rounded-full bg-primary px-7 py-4 text-sm font-medium text-primary-foreground hover:opacity-90 transition" style={{ boxShadow: 'var(--shadow-soar)' }}>
-                Enroll — $299.99
-              </a>
-              <p className="text-xs text-muted-foreground text-center mt-4">Trading futures involves risk. Past performance is not indicative of future results.</p>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* STRATEGIES PACKAGE */}
-          <div className="rounded-3xl border border-border overflow-hidden bg-card/60 backdrop-blur-sm flex flex-col" style={{ boxShadow: 'var(--shadow-card)' }}>
-            <div className="p-8 lg:p-10 flex-1 flex flex-col">
-              <p className="text-xs uppercase tracking-[0.3em] text-primary mb-2">Add-on · Strategy Pack</p>
-              <p className="font-display text-2xl md:text-3xl mb-6">Profitable Strategies Package</p>
-
-              <div className="flex items-baseline gap-3 mb-1">
-                <span className="font-display text-5xl text-foreground">$199.99</span>
+        <div className="mt-10 rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 to-transparent p-8">
+          <p className="text-xs uppercase tracking-[0.3em] text-primary mb-4">Exclusive bonuses</p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {bonuses.map((b) => (
+              <div key={b} className="flex items-center gap-2 text-sm text-foreground/90">
+                <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
+                <span>{b}</span>
               </div>
-              <p className="text-sm text-muted-foreground mb-8">
-                Skip the guesswork. Buy the exact strategies I trade — volume + market structure fused.
-                A shortcut to reading the chart the way we do.
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const valueItems = [
+  { t: "EagleView Strategies", d: "Battle-tested trading models to identify high-probability setups.", v: "$199" },
+  { t: "Private Discord Community", d: "Join our growing community of serious traders focused on results.", v: "$129" },
+  { t: "Live Weekly Training", d: "Real-time market analysis and Q&A with the coach.", v: "$179" },
+  { t: "Market Intelligence Reports", d: "Weekly breakdowns to time the markets with confidence.", v: "$129" },
+  { t: "Trading Psychology Framework", d: "Master the mental game and build unshakable execution.", v: "$129" },
+];
+
+function Offer() {
+  return (
+    <section id="offer" className="relative py-32 px-6">
+      <div className="mx-auto max-w-6xl">
+        {/* Hero offer */}
+        <div className="relative rounded-3xl border border-primary/40 overflow-hidden bg-card mb-10" style={{ boxShadow: 'var(--shadow-card)' }}>
+          <div className="relative h-56 md:h-64">
+            <img src={volumeProfile} alt="Volume profile chart" className="absolute inset-0 h-full w-full object-cover opacity-60" loading="lazy" width={1280} height={800} />
+            <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
+            <div className="relative px-8 md:px-12 py-10 flex flex-col justify-end h-full">
+              <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">The Offer</p>
+              <h2 className="font-display text-3xl md:text-5xl leading-tight max-w-3xl">
+                Complete Trading Mastery System — <span className="text-primary">$299</span>
+              </h2>
+              <p className="text-muted-foreground mt-3 max-w-2xl">
+                Everything you need to become a consistently profitable trader.
               </p>
-
-              <ul className="space-y-3 mb-10 flex-1">
-                {strategyModules.map((m, i) => (
-                  <li key={i} className="flex gap-3 text-sm text-foreground/90">
-                    <span className="font-display text-primary text-xs mt-1 w-6 shrink-0">{String(i + 1).padStart(2, '0')}</span>
-                    <span>{m}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a href="#" className="block w-full text-center rounded-full border border-primary/60 text-primary px-7 py-4 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition">
-                Get the Strategies — $199.99
-              </a>
-              <p className="text-xs text-muted-foreground text-center mt-4">Best paired with the flagship course for full context.</p>
             </div>
           </div>
+        </div>
+
+        {/* Value itemization */}
+        <div className="grid md:grid-cols-2 gap-5 mb-10">
+          {valueItems.map((v) => (
+            <div key={v.t} className="rounded-2xl border border-border bg-card/40 backdrop-blur-sm p-6 flex items-start gap-4 hover:border-primary/40 transition">
+              <div className="h-10 w-10 rounded-lg bg-primary/15 border border-primary/30 flex items-center justify-center shrink-0">
+                <CheckCircle2 className="h-5 w-5 text-primary" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-baseline justify-between gap-3 mb-1">
+                  <h3 className="font-display text-lg">{v.t}</h3>
+                  <span className="text-xs text-muted-foreground">Value {v.v}</span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{v.d}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Total value callout */}
+        <div className="rounded-3xl p-10 md:p-12 text-center relative overflow-hidden border border-primary/40" style={{ background: 'var(--gradient-gold)' }}>
+          <p className="text-xs uppercase tracking-[0.3em] text-primary-foreground/80 mb-3">Your investment</p>
+          <div className="flex flex-wrap items-baseline justify-center gap-x-6 gap-y-2 mb-2">
+            <div className="font-display text-primary-foreground/90 text-2xl">
+              Total Value: <span className="font-semibold">$765</span>
+            </div>
+            <div className="font-display text-primary-foreground text-5xl md:text-6xl">
+              Today: <span className="font-bold">$299</span>
+            </div>
+          </div>
+          <p className="text-primary-foreground/80 text-sm mb-8">One-time payment · Lifetime access · Free updates</p>
+          <a href="#" className="inline-block rounded-full bg-background px-10 py-4 text-base font-medium text-foreground hover:opacity-90 transition" style={{ boxShadow: 'var(--shadow-soar)' }}>
+            Claim Your Spot Now
+          </a>
+          <p className="text-primary-foreground/80 text-xs mt-4">Limited availability — apply today.</p>
         </div>
       </div>
     </section>
@@ -236,12 +300,12 @@ function Closing() {
       <div className="mx-auto max-w-3xl text-center">
         <img src={eagleLogo} alt="" aria-hidden width={64} height={64} className="mx-auto h-16 w-16 mb-8 animate-float" />
         <h2 className="font-display text-4xl md:text-5xl leading-tight mb-6">
-          Rise above the noise.
+          Take flight and start trading <span className="italic text-primary">like a professional</span> today.
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-10">
-          One course. One method. A lifetime of clearer charts and calmer decisions.
+          One system. One method. A lifetime of clearer charts and calmer decisions.
         </p>
-        <a href="#course" className="inline-block rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground hover:opacity-90 transition" style={{ boxShadow: 'var(--shadow-soar)' }}>
+        <a href="#offer" className="inline-block rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground hover:opacity-90 transition" style={{ boxShadow: 'var(--shadow-soar)' }}>
           Take Flight
         </a>
       </div>
@@ -257,7 +321,7 @@ function Footer() {
           <img src={eagleLogo} alt="" width={24} height={24} className="h-6 w-6" />
           <span>Eagle View Futures</span>
         </div>
-        <p>© {new Date().getFullYear()} Eagle View Futures. For educational purposes only.</p>
+        <p>© {new Date().getFullYear()} Eagle View Futures. For educational purposes only. Trading futures involves risk.</p>
       </div>
     </footer>
   );
@@ -268,8 +332,10 @@ function Home() {
     <main>
       <Nav />
       <Hero />
+      <Benefits />
       <Principles />
-      <Course />
+      <Curriculum />
+      <Offer />
       <Closing />
       <Footer />
     </main>
