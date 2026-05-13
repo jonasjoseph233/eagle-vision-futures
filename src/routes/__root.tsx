@@ -73,14 +73,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "eagleview" },
+      { name: "description", content: "Eagle View Futures offers a comprehensive futures trading course focused on volume profile mastery and trading psychology." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "eagleview" },
+      { property: "og:description", content: "Eagle View Futures offers a comprehensive futures trading course focused on volume profile mastery and trading psychology." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "eagleview" },
+      { name: "twitter:description", content: "Eagle View Futures offers a comprehensive futures trading course focused on volume profile mastery and trading psychology." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/de4b4900-892f-4286-a059-fb1a48cffaac/id-preview-1049586b--fac6897b-6097-439e-a2a0-c1d155e44638.lovable.app-1778620780751.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/de4b4900-892f-4286-a059-fb1a48cffaac/id-preview-1049586b--fac6897b-6097-439e-a2a0-c1d155e44638.lovable.app-1778620780751.png" },
     ],
     links: [
       {
