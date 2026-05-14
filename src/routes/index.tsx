@@ -392,7 +392,7 @@ function Offer() {
             </div>
           </div>
           <p className="text-primary-foreground/80 text-sm mb-8">One-time payment · Lifetime access · Free updates</p>
-          <a href="#" className="inline-block rounded-full bg-background px-10 py-4 text-base font-medium text-foreground hover:opacity-90 transition" style={{ boxShadow: 'var(--shadow-soar)' }}>
+          <a href="https://whop.com/checkout/plan_FCF3G8mFRjgDa" target="_blank" rel="noopener noreferrer" className="inline-block rounded-full bg-background px-10 py-4 text-base font-medium text-foreground hover:opacity-90 transition" style={{ boxShadow: 'var(--shadow-soar)' }}>
             Claim Your Spot Now
           </a>
           <p className="text-primary-foreground/80 text-xs mt-4">Limited availability — apply today.</p>
