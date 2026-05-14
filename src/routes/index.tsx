@@ -483,16 +483,14 @@ function Mentorship() {
 
   const applicationSchema = z.object({
     name: z.string().trim().min(2, "Name is required").max(100),
-    email: z.string().trim().email("Valid email required").max(255),
+    phone: z.string().trim().min(5, "Valid phone required").max(30),
     experience: z.string().trim().min(1, "Please select").max(50),
-    capital: z.string().trim().min(1, "Please select").max(50),
-    goals: z.string().trim().min(10, "Tell us a bit more").max(1000),
   });
 
-  const [form, setForm] = useState({ name: "", email: "", experience: "", capital: "", goals: "" });
+  const [form, setForm] = useState({ name: "", phone: "", experience: "" });
   const [submitting, setSubmitting] = useState(false);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = applicationSchema.safeParse(form);
     if (!result.success) {
@@ -500,11 +498,23 @@ function Mentorship() {
       return;
     }
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      setForm({ name: "", email: "", experience: "", capital: "", goals: "" });
+    try {
+      const res = await fetch("/api/public/vip-apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(result.data),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data?.error ?? "Submission failed");
+      }
+      setForm({ name: "", phone: "", experience: "" });
       toast.success("Application received — we'll review within 24 hours.");
-    }, 600);
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Submission failed");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
