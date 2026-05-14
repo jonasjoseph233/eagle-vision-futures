@@ -652,35 +652,19 @@ function Mentorship() {
                   <Input id="m-name" maxLength={100} value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="mt-1.5" />
                 </div>
                 <div>
-                  <Label htmlFor="m-email">Email</Label>
-                  <Input id="m-email" type="email" maxLength={255} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="mt-1.5" />
-                </div>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="m-exp">Trading Experience</Label>
-                  <select id="m-exp" value={form.experience} onChange={(e) => setForm({ ...form, experience: e.target.value })} className="mt-1.5 flex h-9 w-full rounded-md border border-input bg-background px-3 text-sm">
-                    <option value="">Select…</option>
-                    <option value="<1y">Less than 1 year</option>
-                    <option value="1-3y">1–3 years</option>
-                    <option value="3-5y">3–5 years</option>
-                    <option value="5y+">5+ years</option>
-                  </select>
-                </div>
-                <div>
-                  <Label htmlFor="m-cap">Trading Capital</Label>
-                  <select id="m-cap" value={form.capital} onChange={(e) => setForm({ ...form, capital: e.target.value })} className="mt-1.5 flex h-9 w-full rounded-md border border-input bg-background px-3 text-sm">
-                    <option value="">Select…</option>
-                    <option value="<10k">Under $10k</option>
-                    <option value="10-25k">$10k–$25k</option>
-                    <option value="25-100k">$25k–$100k</option>
-                    <option value="100k+">$100k+</option>
-                  </select>
+                  <Label htmlFor="m-phone">Phone #</Label>
+                  <Input id="m-phone" type="tel" maxLength={30} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="mt-1.5" />
                 </div>
               </div>
               <div>
-                <Label htmlFor="m-goals">Your Goals & Biggest Challenge</Label>
-                <Textarea id="m-goals" maxLength={1000} rows={4} value={form.goals} onChange={(e) => setForm({ ...form, goals: e.target.value })} className="mt-1.5" />
+                <Label htmlFor="m-exp">Trading Experience</Label>
+                <select id="m-exp" value={form.experience} onChange={(e) => setForm({ ...form, experience: e.target.value })} className="mt-1.5 flex h-9 w-full rounded-md border border-input bg-background px-3 text-sm">
+                  <option value="">Select…</option>
+                  <option value="<1y">Less than 1 year</option>
+                  <option value="1-3y">1–3 years</option>
+                  <option value="3-5y">3–5 years</option>
+                  <option value="5y+">5+ years</option>
+                </select>
               </div>
               <Button type="submit" disabled={submitting} size="lg" className="w-full">
                 {submitting ? "Submitting…" : "Apply for VIP Mentorship"}
