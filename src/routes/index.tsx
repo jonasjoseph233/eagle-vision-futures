@@ -417,7 +417,7 @@ const faqs = [
   },
   {
     q: "What kind of support is provided?",
-    a: "Our customer service email is EagleviewTrading@Gmail.com. We respond within 24 hours.",
+    a: "Our support email is eagleviewftrading@gmail.com. We respond within 24 hours.",
   },
   {
     q: "Can I access the material on mobile?",
@@ -705,7 +705,13 @@ function Footer() {
           <img src={eagleLogo} alt="" width={24} height={24} className="h-6 w-6" />
           <span>Eagle View Futures</span>
         </div>
-        <p>© {new Date().getFullYear()} Eagle View Futures. For educational purposes only. Trading futures involves risk.</p>
+        <p className="text-center">
+          Support:{" "}
+          <a href="mailto:eagleviewftrading@gmail.com" className="underline hover:text-foreground transition-colors">
+            eagleviewftrading@gmail.com
+          </a>
+        </p>
+        <p className="text-center md:text-right">© {new Date().getFullYear()} Eagle View Futures. For educational purposes only.</p>
       </div>
     </footer>
   );
