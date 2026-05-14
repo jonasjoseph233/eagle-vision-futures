@@ -417,7 +417,7 @@ const faqs = [
   },
   {
     q: "What kind of support is provided?",
-    a: "Our customer service email is EagleviewTrading@Gmail.com. We respond within 24 hours.",
+    a: "Our support email is eagleviewftrading@gmail.com. We respond within 24 hours.",
   },
   {
     q: "Can I access the material on mobile?",
