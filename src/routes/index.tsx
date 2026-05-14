@@ -330,7 +330,7 @@ function Strategies() {
             <p className="text-xs uppercase tracking-[0.3em] text-primary mb-2">Your investment</p>
             <div className="font-display text-5xl text-foreground mb-1">$199.99</div>
             <p className="text-sm text-muted-foreground mb-6">One-time payment · Lifetime access</p>
-            <a href="#" className="block w-full text-center rounded-full bg-primary px-7 py-4 text-sm font-medium text-primary-foreground hover:opacity-90 transition" style={{ boxShadow: 'var(--shadow-soar)' }}>
+            <a href="https://whop.com/checkout/plan_Hd0wfpQnpP3dy" target="_blank" rel="noopener noreferrer" className="block w-full text-center rounded-full bg-primary px-7 py-4 text-sm font-medium text-primary-foreground hover:opacity-90 transition" style={{ boxShadow: 'var(--shadow-soar)' }}>
               Get the Strategies — $199.99
             </a>
             <p className="text-xs text-muted-foreground text-center mt-4">Best paired with the flagship course for full context.</p>
