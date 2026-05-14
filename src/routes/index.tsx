@@ -613,7 +613,7 @@ function Mentorship() {
                 </div>
                 <p className="text-sm text-muted-foreground">We maintain a 4:1 student-to-mentor ratio for quality. All applications reviewed within 24 hours.</p>
               </div>
-              <a href="#mentorship-apply" className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition text-center" style={{ boxShadow: 'var(--shadow-soar)' }}>
+              <a href="https://whop.com/checkout/plan_GjuzS4QwpwBpE" target="_blank" rel="noopener noreferrer" className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90 transition text-center" style={{ boxShadow: 'var(--shadow-soar)' }}>
                 Book a Call — $450/mo
               </a>
             </div>
