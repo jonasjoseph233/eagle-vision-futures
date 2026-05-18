@@ -298,9 +298,6 @@ function Strategies() {
               <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm">
                 <CheckCircle2 className="h-4 w-4 text-primary" /> Free Checklist
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm">
-                <BookOpen className="h-4 w-4 text-primary" /> Free EagleView E-Book
-              </span>
             </div>
           </div>
         </div>
