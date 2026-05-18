@@ -73,6 +73,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "8o9yzirU7p0mlnJ4XbU258io7rlGmiwJqwxltPOtlHc" },
       { title: "Eagle View Futures — Trading Mastery Course" },
       { name: "description", content: "Eagle View Futures offers a comprehensive futures trading course focused on volume profile mastery and trading psychology." },
       { property: "og:site_name", content: "Eagle View Futures" },
