@@ -298,9 +298,6 @@ function Strategies() {
               <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm">
                 <CheckCircle2 className="h-4 w-4 text-primary" /> Free Checklist
               </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm">
-                <BookOpen className="h-4 w-4 text-primary" /> Free EagleView E-Book
-              </span>
             </div>
           </div>
         </div>
@@ -315,7 +312,7 @@ function Strategies() {
             <p className="text-muted-foreground leading-relaxed mb-6">
               Already trading and just want the playbook? Buy the exact strategies I trade —
               volume + market structure fused, with annotated entries, stops and targets.
-              Includes the Free Checklist & Free EagleView E-Book.
+              Includes the Free Checklist.
             </p>
             <ul className="space-y-2 mb-8">
               {strategyArsenal.map((s) => (
