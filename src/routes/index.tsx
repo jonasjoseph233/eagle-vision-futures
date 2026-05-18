@@ -312,7 +312,7 @@ function Strategies() {
             <p className="text-muted-foreground leading-relaxed mb-6">
               Already trading and just want the playbook? Buy the exact strategies I trade —
               volume + market structure fused, with annotated entries, stops and targets.
-              Includes the Free Checklist & Free EagleView E-Book.
+              Includes the Free Checklist.
             </p>
             <ul className="space-y-2 mb-8">
               {strategyArsenal.map((s) => (
