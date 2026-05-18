@@ -16,10 +16,45 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { title: "Eagle View Futures — Master Futures Trading with Psychology-Driven Strategies" },
+      { title: "Eagle View Futures — Trading Mastery Course" },
       { name: "description", content: "Master futures trading with psychology-driven strategies. Volume Profile, market structure, live coaching, private Discord — the complete EagleView system." },
-      { property: "og:title", content: "Eagle View Futures — Complete Trading Mastery System" },
+      { property: "og:title", content: "Eagle View Futures — Trading Mastery Course" },
       { property: "og:description", content: "Psychology-driven futures trading. Volume Profile mastery, live walkthroughs of NQ & ES, private Discord." },
+      { property: "og:url", content: "https://eagleviewftrading.com/" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://eagleviewftrading.com/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Course",
+          name: "Complete Trading Mastery System",
+          description: "Psychology-driven futures trading mentorship covering Volume Profile mastery, market structure, live walkthroughs of NQ & ES, and private Discord access.",
+          provider: {
+            "@type": "Organization",
+            name: "Eagle View Futures",
+            url: "https://eagleviewftrading.com",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "What are the program requirements/prerequisites?", acceptedAnswer: { "@type": "Answer", text: "You must understand the mental and psychological aspect of trading before using live funds. This ensures you remain process-focused instead of focused on money." } },
+            { "@type": "Question", name: "What if I'm a complete beginner?", acceptedAnswer: { "@type": "Answer", text: "You must have a basic understanding of what forex/futures are, along with the scale metrics used in the markets." } },
+            { "@type": "Question", name: "How long does it take to see results?", acceptedAnswer: { "@type": "Answer", text: "After understanding and becoming disciplined to the trading system, you can see results in as little as 1 month." } },
+            { "@type": "Question", name: "What kind of support is provided?", acceptedAnswer: { "@type": "Answer", text: "Our support email is eagleviewftrading@gmail.com. We respond within 24 hours." } },
+            { "@type": "Question", name: "Can I access the material on mobile?", acceptedAnswer: { "@type": "Answer", text: "You can — however it is advised not to place trades using mobile cellular devices." } },
+          ],
+        }),
+      },
     ],
   }),
 });
